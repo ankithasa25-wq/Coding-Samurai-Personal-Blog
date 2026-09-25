@@ -1,32 +1,44 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Create Post</title>
+    <title>Create Post - My Personal Blog</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
+
 <body>
 
-    <h1>Create a Blog Post</h1>
+    <nav class="navbar">
+        <h2>My Personal Blog</h2>
 
-    <form method="POST">
+        <div>
+            <a href="/">Home</a>
+            <a href="/login">Login</a>
+            <a href="/register">Register</a>
+            <a href="/create_post">Create Post</a>
+        </div>
+    </nav>
 
-        <label>Title:</label>
-        <input type="text" name="title" required>
+    <div class="form-box">
 
-        <br><br>
+        <h1>✍️ Create a New Post</h1>
 
-        <label>Article:</label>
-        <br>
-        <textarea name="content" rows="10" cols="50" required></textarea>
+        <p style="text-align: center; color: #666;">
+            Share your thoughts and ideas with your readers.
+        </p>
 
-        <br><br>
+        <form method="POST">
 
-        <button type="submit">Publish Post</button>
+            <label>📌 Post Title</label>
+            <input type="text" name="title" placeholder="Enter your post title" required>
 
-    </form>
+            <label>📝 Your Story</label>
+            <textarea name="content" rows="9" placeholder="Write your thoughts here..." required></textarea>
 
-    <br>
+            <button type="submit" class="button">🚀 Publish Post</button>
 
-    <a href="/">Back to Home</a>
+        </form>
+
+    </div>
 
 </body>
 </html>

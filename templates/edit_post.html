@@ -1,32 +1,44 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Edit Post</title>
+    <title>Edit Post - My Personal Blog</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
+
 <body>
 
-    <h1>Edit Blog Post</h1>
+    <nav class="navbar">
+        <h2>My Personal Blog</h2>
 
-    <form method="POST">
+        <div>
+            <a href="/">Home</a>
+            <a href="/login">Login</a>
+            <a href="/register">Register</a>
+            <a href="/create_post">Create Post</a>
+        </div>
+    </nav>
 
-        <label>Title:</label>
-        <input type="text" name="title" value="{{ post['title'] }}" required>
+    <div class="form-box">
 
-        <br><br>
+        <h1>✏️ Edit Your Post</h1>
 
-        <label>Article:</label>
-        <br>
-        <textarea name="content" rows="10" cols="50" required>{{ post['content'] }}</textarea>
+        <p style="text-align: center; color: #666;">
+            Update your post and save your changes.
+        </p>
 
-        <br><br>
+        <form method="POST">
 
-        <button type="submit">Update Post</button>
+            <label>📌 Post Title</label>
+            <input type="text" name="title" value="{{ post['title'] }}" required>
 
-    </form>
+            <label>📝 Your Story</label>
+            <textarea name="content" rows="9" required>{{ post['content'] }}</textarea>
 
-    <br>
+            <button type="submit" class="button">💾 Save Changes</button>
 
-    <a href="/">Back to Home</a>
+        </form>
+
+    </div>
 
 </body>
 </html>

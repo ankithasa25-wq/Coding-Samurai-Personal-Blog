@@ -2,29 +2,50 @@
 <html>
 <head>
     <title>My Personal Blog</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
+
 <body>
 
-    <h1>Welcome to My Personal Blog</h1>
+    <nav class="navbar">
+        <h2>My Personal Blog</h2>
 
-    <a href="/login">Login</a>
-    <a href="/register">Register</a>
-    <a href="/create_post">Create Post</a>
+        <div>
+            <a href="/">Home</a>
+            <a href="/login">Login</a>
+            <a href="/register">Register</a>
+            <a href="/create_post">Create Post</a>
+        </div>
+    </nav>
 
-    <h2>Blog Posts</h2>
+    <div class="container">
 
-    {% for post in posts %}
+        <div class="welcome">
+            <h1>✨ Welcome to My Personal Blog ✨</h1>
+            <p>Share your thoughts, ideas, experiences and stories with the world.</p>
+            <a href="/create_post" class="button">✍️ Write a New Post</a>
+        </div>
 
-        <h3>{{ post["title"] }}</h3>
+        <h2>📚 Latest Blog Posts</h2>
 
-        <p>{{ post["content"] }}</p>
+        {% for post in posts %}
 
-        <a href="/edit/{{ post['id'] }}">Edit</a>
-        <a href="/delete/{{ post['id'] }}">Delete</a>
+            <div class="post">
 
-        <hr>
+                <h2>📝 {{ post["title"] }}</h2>
 
-    {% endfor %}
+                <p>{{ post["content"] }}</p>
+
+                <div class="actions">
+                    <a href="/edit/{{ post['id'] }}">✏️ Edit</a>
+                    <a href="/delete/{{ post['id'] }}">🗑️ Delete</a>
+                </div>
+
+            </div>
+
+        {% endfor %}
+
+    </div>
 
 </body>
 </html>

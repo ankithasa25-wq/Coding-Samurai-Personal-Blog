@@ -1,31 +1,44 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Register</title>
+    <title>Register - My Personal Blog</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
+
 <body>
 
-    <h1>Create an Account</h1>
+    <nav class="navbar">
+        <h2>My Personal Blog</h2>
 
-    <form method="POST">
+        <div>
+            <a href="/">Home</a>
+            <a href="/login">Login</a>
+            <a href="/register">Register</a>
+            <a href="/create_post">Create Post</a>
+        </div>
+    </nav>
 
-        <label>Username:</label>
-        <input type="text" name="username" required>
+    <div class="form-box">
 
-        <br><br>
+        <h1>🌟 Create Account</h1>
 
-        <label>Password:</label>
-        <input type="password" name="password" required>
+        <p style="text-align: center; color: #666;">
+            Join the blog and start sharing your ideas!
+        </p>
 
-        <br><br>
+        <form method="POST">
 
-        <button type="submit">Register</button>
+            <label>👤 Username</label>
+            <input type="text" name="username" placeholder="Choose a username" required>
 
-    </form>
+            <label>🔑 Password</label>
+            <input type="password" name="password" placeholder="Create a password" required>
 
-    <br>
+            <button type="submit" class="button">Create Account →</button>
 
-    <a href="/">Back to Home</a>
+        </form>
+
+    </div>
 
 </body>
 </html>
