@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Personal Blog</title>
+</head>
+<body>
+
+    <h1>Welcome to My Personal Blog</h1>
+
+    <a href="/login">Login</a>
+    <a href="/register">Register</a>
+    <a href="/create_post">Create Post</a>
+
+    <h2>Blog Posts</h2>
+
+    {% for post in posts %}
+
+        <h3>{{ post["title"] }}</h3>
+
+        <p>{{ post["content"] }}</p>
+
+        <a href="/edit/{{ post['id'] }}">Edit</a>
+        <a href="/delete/{{ post['id'] }}">Delete</a>
+
+        <hr>
+
+    {% endfor %}
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Post</title>
+</head>
+<body>
+
+    <h1>Edit Blog Post</h1>
+
+    <form method="POST">
+
+        <label>Title:</label>
+        <input type="text" name="title" value="{{ post['title'] }}" required>
+
+        <br><br>
+
+        <label>Article:</label>
+        <br>
+        <textarea name="content" rows="10" cols="50" required>{{ post['content'] }}</textarea>
+
+        <br><br>
+
+        <button type="submit">Update Post</button>
+
+    </form>
+
+    <br>
+
+    <a href="/">Back to Home</a>
+
+</body>
+</html>
